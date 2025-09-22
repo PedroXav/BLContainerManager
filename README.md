@@ -29,8 +29,11 @@ Sistema web desenvolvido em ASP.NET Core MVC para gerenciamento de BLs (Bill of 
 
 A página de relatório exibe os dados agrupados por BL, mostrando os containers vinculados a cada um.
 
+## Video 
+
+![Teste Funcioanndo](./TP02_CBTSWE02.gif)
+
 ## 👨‍💻 Desenvolvedores
 
 - Pedro Xavier Oliveira — CB3027376  
 - Leandro Felix Nunes — CB3026159
-
