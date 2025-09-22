@@ -335,3 +335,4 @@ C:\Users\pxoes\Documents\prof_Tuler\BLContainerManager\BLContainerManager\bin\De
 C:\Users\pxoes\Documents\prof_Tuler\BLContainerManager\BLContainerManager\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\pxoes\Documents\prof_Tuler\BLContainerManager\BLContainerManager\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\pxoes\Documents\prof_Tuler\BLContainerManager\BLContainerManager\obj\Debug\net9.0\compressed\kmk5dc8c1m-ravo86sbmu.gz
+C:\Users\pxoes\Documents\prof_Tuler\BLContainerManager\BLContainerManager\obj\Debug\net9.0\BLContainerManager.sourcelink.json

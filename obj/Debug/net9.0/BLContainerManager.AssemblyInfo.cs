@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BLContainerManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3123b1ac173453eb65b59007357080e730d12049")]
 [assembly: System.Reflection.AssemblyProductAttribute("BLContainerManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BLContainerManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
