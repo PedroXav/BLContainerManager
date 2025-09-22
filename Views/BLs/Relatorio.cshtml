@@ -1,0 +1,55 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model IEnumerable<BLContainerManager.Models.BL>
+
+@{
+    ViewData["Title"] = "Relatório de BLs e Containers";
+}
+
+<h2 class="mb-4 text-title">Relatório de BLs e Containers</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        @foreach (var bl in Model)
+        {
+            <div class="mb-4">
+                <h5 class="text-title">BL: @bl.Numero</h5>
+                <p><strong>Consignee:</strong> @bl.Consignee | <strong>Navio:</strong> @bl.Navio</p>
+
+                @if (bl.Containers != null && bl.Containers.Any())
+                {
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Número</th>
+                                <th>Tipo</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var container in bl.Containers)
+                            {
+                                <tr>
+                                    <td>@container.Numero</td>
+                                    <td>@container.Tipo</td>
+                                    <td>@container.Tamanho</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p class="text-muted">Nenhum container vinculado.</p>
+                }
+            </div>
+        }
+
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary mt-3">Voltar para a página principal</a>
+    </div>
+</div>

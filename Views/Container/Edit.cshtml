@@ -1,0 +1,58 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model BLContainerManager.Models.Container
+
+@{
+    ViewData["Title"] = "Editar Container";
+}
+
+<h2 class="mb-4 text-title">Editar Container</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="ID" />
+
+            <div class="mb-3">
+                <label asp-for="Numero" class="form-label text-title">Número</label>
+                <input asp-for="Numero" class="form-control input-custom" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Tipo" class="form-label text-title">Tipo</label>
+                <input asp-for="Tipo" class="form-control input-custom" />
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Tamanho" class="form-label text-title">Tamanho</label>
+                <input asp-for="Tamanho" class="form-control input-custom" />
+                <span asp-validation-for="Tamanho" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="BLID" class="form-label text-title">BL Vinculado</label>
+                <select asp-for="BLID" class="form-control input-custom" asp-items="ViewBag.BLID"></select>
+                <span asp-validation-for="BLID" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex gap-2 mt-3">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

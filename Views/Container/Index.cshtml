@@ -1,0 +1,49 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model IEnumerable<BLContainerManager.Models.Container>
+
+@{
+    ViewData["Title"] = "Lista de Containers";
+}
+
+<h2 class="mb-4 text-title">Containers Cadastrados</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Número</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>BL</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Numero</td>
+                        <td>@item.Tipo</td>
+                        <td>@item.Tamanho</td>
+                        <td>@item.BL?.Numero</td>
+                        <td class="text-center">
+                            <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary btn-sm">Detalhes</a>
+                            <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-success btn-sm ms-1">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-danger btn-sm ms-1">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a asp-action="Create" class="btn btn-success mt-3">Cadastrar Novo Container</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary mt-3 ms-2">Voltar para a página principal</a>
+    </div>
+</div>

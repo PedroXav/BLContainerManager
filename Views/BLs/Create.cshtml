@@ -1,0 +1,47 @@
+﻿<!--Desenvolvido por:
+  
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model BLContainerManager.Models.BL
+
+@{
+    ViewData["Title"] = "Criar BL";
+}
+
+<h2 class="mb-4">Cadastrar Novo BL</h2>
+
+<div class="card shadow">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Numero" class="form-label">Número do BL</label>
+                <input asp-for="Numero" class="form-control" placeholder="Ex: BL001" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Consignee" class="form-label">Consignee</label>
+                <input asp-for="Consignee" class="form-control" placeholder="Ex: Pedro Importações" />
+                <span asp-validation-for="Consignee" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Navio" class="form-label">Navio</label>
+                <input asp-for="Navio" class="form-control" placeholder="Ex: MSC Brasil" />
+                <span asp-validation-for="Navio" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a asp-action="Index" class="btn btn-danger ms-2">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

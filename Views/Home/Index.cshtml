@@ -1,0 +1,44 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<h2 class="mb-4 text-title mt-4">Bem-vindo ao Gerenciador de BLs e Containers</h2>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="text-title">BLs</h5>
+                <p>Visualize, cadastre e gerencie seus BLs com facilidade.</p>
+                <a asp-controller="BLs" asp-action="Index" class="btn btn-success">Ir para BLs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="text-title">Containers</h5>
+                <p>Gerencie os containers vinculados aos seus BLs.</p>
+                <a asp-controller="Container" asp-action="Index" class="btn btn-success">Ir para Containers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="text-title">Relatórios</h5>
+                <p>Visualize os dados agrupados por BL e seus respectivos containers.</p>
+                <a asp-controller="Relatorio" asp-action="Index" class="btn btn-success">Ver Relatório</a>
+            </div>
+        </div>
+    </div>
+</div>

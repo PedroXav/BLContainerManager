@@ -1,0 +1,42 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model BLContainerManager.Models.Container
+
+@{
+    ViewData["Title"] = "Excluir Container";
+}
+
+<h2 class="mb-4 text-title">Excluir Container</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h5 class="mb-3">Tem certeza que deseja excluir este container?</h5>
+
+        <dl class="row">
+            <dt class="col-sm-3 text-title">Número</dt>
+            <dd class="col-sm-9">@Model.Numero</dd>
+
+            <dt class="col-sm-3 text-title">Tipo</dt>
+            <dd class="col-sm-9">@Model.Tipo</dd>
+
+            <dt class="col-sm-3 text-title">Tamanho</dt>
+            <dd class="col-sm-9">@Model.Tamanho</dd>
+
+            <dt class="col-sm-3 text-title">BL Vinculado</dt>
+            <dd class="col-sm-9">@Model.BL?.Numero</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <div class="d-flex gap-2 mt-3">
+                <input type="submit" value="Excluir" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+            </div>
+        </form>
+    </div>
+</div>

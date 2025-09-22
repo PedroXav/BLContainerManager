@@ -1,0 +1,59 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model BLContainerManager.Models.Container
+
+@{
+    ViewData["Title"] = "Criar Container";
+}
+
+<h2 class="mb-4">Cadastrar Novo Container</h2>
+
+<div class="card shadow">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Numero" class="form-label">Número do Container</label>
+                <input asp-for="Numero" class="form-control" placeholder="Ex: MSCU1234567" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Tipo" class="form-label">Tipo</label>
+                <select asp-for="Tipo" class="form-control" asp-items="ViewBag.Tipos">
+                    <option value="">Selecione...</option>
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Tamanho" class="form-label">Tamanho</label>
+                <select asp-for="Tamanho" class="form-control" asp-items="ViewBag.Tamanhos">
+                    <option value="">Selecione...</option>
+                </select>
+                <span asp-validation-for="Tamanho" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="BLID" class="form-label">BL</label>
+                <select asp-for="BLID" class="form-control" asp-items="ViewBag.BLID">
+                    <option value="">Selecione...</option>
+                </select>
+                <span asp-validation-for="BLID" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a asp-action="Index" class="btn btn-danger ms-2">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

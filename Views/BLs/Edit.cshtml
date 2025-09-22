@@ -1,0 +1,52 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model BLContainerManager.Models.BL
+
+@{
+    ViewData["Title"] = "Editar BL";
+}
+
+<h2 class="mb-4 text-title">Editar BL</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="ID" />
+
+            <div class="mb-3">
+                <label asp-for="Numero" class="form-label text-title">Número do BL</label>
+                <input asp-for="Numero" class="form-control input-custom" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Consignee" class="form-label text-title">Consignee</label>
+                <input asp-for="Consignee" class="form-control input-custom" />
+                <span asp-validation-for="Consignee" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Navio" class="form-label text-title">Navio</label>
+                <input asp-for="Navio" class="form-control input-custom" />
+                <span asp-validation-for="Navio" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex gap-2 mt-3">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,33 @@
+﻿<!--Desenvolvido por:
+
+  Pedro Xavier Oliveira CB3027376
+  Leandro Felix Nunes CB3026159
+
+ -->
+
+@model BLContainerManager.Models.BL
+
+@{
+    ViewData["Title"] = "Detalhes do BL";
+}
+
+<h2 class="mb-4 text-title">Detalhes do BL</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 text-title">Número</dt>
+            <dd class="col-sm-9">@Model.Numero</dd>
+
+            <dt class="col-sm-3 text-title">Consignee</dt>
+            <dd class="col-sm-9">@Model.Consignee</dd>
+
+            <dt class="col-sm-3 text-title">Navio</dt>
+            <dd class="col-sm-9">@Model.Navio</dd>
+        </dl>
+
+        <div class="d-flex gap-2 mt-3">
+            <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+        </div>
+    </div>
+</div>
